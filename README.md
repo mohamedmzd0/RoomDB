@@ -22,7 +22,7 @@ public class DatabaseClient {
         //creating the app database with Room database builder
         appDatabase = Room.databaseBuilder(mCtx, ArticlesDatabase.class,
         /// name of databse , allow to run on UI thread 
-                "name of database").allowMainThreadQueries().build();
+                "name of database").allowMainThreadQueries().fallbackToDestructiveMigration().build();
     }
     public static synchronized DatabaseClient getInstance(Context mCtx) {
         if (mInstance == null) {
